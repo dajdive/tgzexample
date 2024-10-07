@@ -13,6 +13,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class CompressTgzTest {
 
+    private static final Long OUTPUT_FILE_SIZE = 168L;
     @Test
     public void testCompressMultipleFiles() {
         try {
@@ -26,7 +27,7 @@ public class CompressTgzTest {
 
             assertEquals("output1.tgz", output.getFileName().toString());
             // tgz file size should be 168 bytes
-            assertEquals(168, output.toFile().length());
+            assertEquals(OUTPUT_FILE_SIZE, output.toFile().length());
 
         } catch (IOException e) {
             e.printStackTrace();
